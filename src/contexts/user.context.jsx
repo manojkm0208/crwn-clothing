@@ -14,6 +14,7 @@ export const UserProvider = ({ children }) => {
   const value = { currentUser, setCurrentUser };
 
   useEffect(() => {
+    //onAuthStateChangedListener will run whenever auth state changes (i.e this will keep track the user sign-in and sign-out)
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
         createUserDocumentFromAuth(user);
